@@ -31,9 +31,40 @@ function resetScores() {
 }
 computerRandomLetter()
 console.log(computerGuess)
+
+
+
 // create onkey up event function to grab userGuess
 
 
+document.onkeyup = function (event) {
+    userGuess = event.key;
+    console.log(userGuess);
+    var userGuess = event.key.toLowerCase();
+
+
+    if (userGuess === computerGuess) {
+        wins++;
+        guessSoFar = [];
+        guessLeft = 9;
+        computerRandomLetter();
+        console.log(computerGuess)
+
+    }
+    else if (userGuess != computerGuess) {
+        guessLeft--;
+        guessSoFar.push(userGuess)
+        document.querySelector("#guessSoFar").innerHTML = guessSoFar;
+    }
+    if (guessLeft === 0) {
+
+        guessLeft = 9;
+        losses++;
+        guessSoFar = [];
+
+    }
+    updateDisplay();
+}
 
 
 
