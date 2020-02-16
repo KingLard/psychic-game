@@ -19,5 +19,22 @@ function updateDisplay() {
 updateDisplay();
 
 
+// create a function to generate a random letter for computer guess
+function computerRandomLetter() {
+    computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
+}
+
+// create an function to reset scores
+function resetScores() {
+    var guessSoFar = [];
+    var guessLeft = 9;
+}
+computerRandomLetter()
+console.log(computerGuess)
+// create onkey up event function to grab userGuess
+
+
+
+
 
 
